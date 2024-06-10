@@ -45,12 +45,13 @@ if(setuserRef.current==0){
 
 
   const out = async() => {
-    navigate(MENU_ROUTE)
+    navigate(-1)
   }
  
   return (
     <div className="App">
-      <h1 class='color'>AGAX-DATA.RU</h1>
+      <h1 class='color'>AGAX-DATA.RU: Профиль</h1>
+      <div class='color1' >{setuserRef?.current?.name}</div>
       <div class='display_flex'>
       
 
@@ -58,7 +59,7 @@ if(setuserRef.current==0){
   
 
   <div class='user_info'>
-  <h2 class='polzovatel'>Пользователь</h2>
+
 
   <div class='infos infos33'>
     <div class='title title33'>
@@ -94,7 +95,7 @@ if(setuserRef.current==0){
     {setuserRef?.current?.phone}
       </div>
   </div>
-  <div onClick={out} type="submit" class="width btn btn-primary btn-block btn-large">Выход</div>
+  <div onClick={out} type="submit" class="width btn btn-primary btn-block btn-large">Назад</div>
   </div>
 
 </div>

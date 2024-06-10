@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const $host = axios.create({
-    baseURL:'http://localhost:5002/'
+    baseURL:'https://agax-data.ru:8443/'
 })
 
 

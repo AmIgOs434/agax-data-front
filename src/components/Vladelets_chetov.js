@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import useState from 'react-usestateref'
 import { get_scheta_your, login2 } from '../https/deviceAPI';
 import { jwtDecode } from "jwt-decode";
-import $ from "jquery";
+import $ from "jquery";  
 import { useNavigate } from 'react-router-dom';
 import { ALL_SCHETA_ROUTE, GLAV_ROUTE, MENU_ROUTE } from '../utils/consts';
 function Vladelets_chetov() {
@@ -55,7 +55,7 @@ if(setschetaRef.current==null){
         }
     }
     
-
+$('html,body').animate({scrollTop:0},300);
     setschet_active(setschetaRef?.current[0])
   }
   const get1 = async() => {
@@ -73,7 +73,21 @@ if(setschetaRef.current==null){
      
         setscheta(scheta)
 
-        setkod_text(setschetaRef?.current[0]['Код текстовый'])
+        if(setschetaRef?.current[0]==undefined){
+            
+        setkod_text('Нет данных')
+        setnaimen('Нет данных')
+        setopisaniye('Нет данных')
+        setporadok('Нет данных')
+        setrassil('Нет данных')
+        setrassil('Нет данных')
+        setopisaniye('Нет данных')
+        setsost('Нет данных')
+        setuvedoml('Нет данных')
+        setuvedoml('Нет данных')
+        setschet_active('Нет данных')    
+        } else{
+     setkod_text(setschetaRef?.current[0]['Код текстовый'])
         setnaimen(setschetaRef?.current[0]['Наименование'])
         setopisaniye(setschetaRef?.current[0]['Описание'])
         setporadok(setschetaRef?.current[0]['Порядок'])
@@ -92,9 +106,8 @@ if(setschetaRef.current==null){
                 setuvedoml('false')
             }
         }
-        
-
         setschet_active(setschetaRef?.current[0])
+        }
 
         $('.login').addClass('none')
         $('.info').removeClass('d_none')
@@ -111,15 +124,17 @@ if(setschetaRef.current==null){
   }
  
   return (
-    <div className="App">
+    <div className="App" id='app'>
       <h1 class='color'>AGAX-DATA.RU</h1>
       <div class='display_flex1'>
       
       <div class='info1'>
   
 
-  <div class='user_info'>
-  <h2 class='polzovatel'>Ваши счета</h2>
+  <div class='user_info43'>
+  <h2 class='polzovatel '>Ваши счета</h2>
+  <div onClick={out} type="submit" class="width1 btn  btn-primary btn-block btn-large">Назад</div>
+
 
 {
     setschetaRef?.current?.map(e=> 
@@ -128,8 +143,6 @@ if(setschetaRef.current==null){
     )
 }
  
-  <div onClick={out} type="submit" class="width1 btn  btn-primary btn-block btn-large">Назад</div>
-
 
   </div>
 
@@ -137,8 +150,8 @@ if(setschetaRef.current==null){
 <div class='info2'>
   
 
-  <div class='user_info user_info1'>
-  <h2 class='polzovatel'>Счет № {setkod_textRef?.current}</h2>
+  <div class='user_info43 user_info1'>
+  <h2 class='polzovatel21 polzovatel123'>Счет № {setkod_textRef?.current}</h2>
 
 
   <div class='infos'>
@@ -198,6 +211,7 @@ if(setschetaRef.current==null){
   </div>
   </div>
   </div>
+    <h2 class='polzovatel polzovatel232'>Счет № {setkod_textRef?.current}</h2>
 </div>
 
 </div>

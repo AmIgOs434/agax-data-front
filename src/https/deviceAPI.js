@@ -22,3 +22,12 @@ export const get_scheta_your = async (id) => {
     const {data} = await $host.get('api/user/getSchetByKodGlav/'+ id)  
     return data
 }
+
+export const getProvodkiByRashod = async (id) => {
+    const {data} = await $host.get('api/user/getProvodkiByRashod/'+ id)  
+    return data
+}
+export const getProvodkiByPrihod = async (id) => {
+    const {data} = await $host.get('api/user/getProvodkiByPrihod/'+ id)  
+    return data
+}
